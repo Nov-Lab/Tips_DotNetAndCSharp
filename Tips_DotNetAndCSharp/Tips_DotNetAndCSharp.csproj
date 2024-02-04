@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tips_FILEandLINE.cs" />
     <Compile Include="Tips_LocalFunction.cs" />
     <Compile Include="Tips_MethodAutoDetectByAttribute.cs" />
     <Compile Include="Tips_ObjectArrayInForeach.cs" />
