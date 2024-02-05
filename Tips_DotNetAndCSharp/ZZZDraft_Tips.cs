@@ -1,4 +1,4 @@
-﻿// 24/02/02
+﻿// 下書き用
 
 using System;
 using System.Diagnostics;
