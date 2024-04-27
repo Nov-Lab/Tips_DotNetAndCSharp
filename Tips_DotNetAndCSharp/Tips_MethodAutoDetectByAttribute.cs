@@ -1,6 +1,7 @@
 ﻿// @(h)Tips_MethodAutoDetectByAttribute.cs ver 0.00 ( '24.02.02 Nov-Lab ) 作成開始
 // @(h)Tips_MethodAutoDetectByAttribute.cs ver 0.51 ( '24.02.02 Nov-Lab ) ベータ版完成
 // @(h)Tips_MethodAutoDetectByAttribute.cs ver 0.52 ( '24.02.03 Nov-Lab ) 機能追加：ソート機能を追加した
+// @(h)Tips_MethodAutoDetectByAttribute.cs ver 0.52a( '24.04.27 Nov-Lab ) その他  ：コメント整理
 
 using System;
 using System.Diagnostics;
@@ -11,11 +12,11 @@ namespace Tips_DotNetAndCSharp
 {
     //====================================================================================================
     /// <summary>
-    /// 【.NET Framework の小技：目印属性クラスによるメソッドの自動検出】<br></br>
-    /// ・属性クラスで目印をつけておくことで、特定目的のメソッドを自動的に検出できるようにする小技です。<br></br>
-    /// ・こうすることで、新しいメソッドを追加したときに、既存部分を修正しなくても自動的に検出させることができます。<br></br>
-    /// ・このプロジェクトの場合、Tipsのサンプルメソッドに TipsMethod属性をつけています。<br></br>
-    /// ・TipsMethod属性をつけたメソッドは、メインフォームのTips一覧リストへ自動的に追加されます。<br></br>
+    /// 【.NET Framework の小技：目印属性クラスによるメソッドの自動検出】<br/>
+    /// ・属性クラスで目印をつけておくことで、特定目的のメソッドを自動的に検出できるようにする小技です。<br/>
+    /// ・こうすることで、新しいメソッドを追加したときに、既存部分を修正しなくても自動的に検出させることができます。<br/>
+    /// ・このプロジェクトの場合、Tipsのサンプルメソッドに <see cref="TipsMethodAttribute"/> 属性をつけています。<br/>
+    /// ・<see cref="TipsMethodAttribute"/> 属性をつけたメソッドは、メインフォームのTips一覧リストへ自動的に追加されます。<br/>
     /// </summary>
     //====================================================================================================
     public class About_TipsMethodAttribute { }
@@ -27,8 +28,8 @@ namespace Tips_DotNetAndCSharp
     /// メソッドをTipsのサンプルメソッドとしてマークし、メイン画面が自動的に認識できるようにします。
     /// </summary>
     /// <remarks>
-    /// 補足<br></br>
-    /// ・この属性を付加するメソッドは <see cref="Action"/> デリゲートに合致していなければなりません。<br></br>
+    /// 補足<br/>
+    /// ・この属性を付加するメソッドは <see cref="Action"/> デリゲートに合致していなければなりません。<br/>
     /// </remarks>
     //====================================================================================================
     [AttributeUsage(AttributeTargets.Method)]   // 属性適用対象 = メソッド
@@ -38,9 +39,9 @@ namespace Tips_DotNetAndCSharp
         // 公開フィールド
         //====================================================================================================
         /// <summary>
-        /// 【表示名(読み取り専用)】Tipメソッドの表示名です。
+        /// 【Tipメソッド表示名(読み取り専用)】Tipメソッドの表示名です。
         /// </summary>
-        public readonly string displayText;
+        public readonly string displayName;
 
 
         //====================================================================================================
@@ -51,15 +52,15 @@ namespace Tips_DotNetAndCSharp
         /// 【Tipメソッド属性】
         /// メソッドをTipsのサンプルメソッドとしてマークし、メイン画面が自動的に認識できるようにします。
         /// </summary>
-        /// <param name="displayText">[in ]：表示名</param>
+        /// <param name="displayName">[in ]：Tipメソッド表示名</param>
         /// <remarks>
-        /// 補足<br></br>
-        /// ・この属性を付加するメソッドは <see cref="Action"/> デリゲートに合致していなければなりません。<br></br>
+        /// 補足<br/>
+        /// ・この属性を付加するメソッドは <see cref="Action"/> デリゲートに合致していなければなりません。<br/>
         /// </remarks>
         //--------------------------------------------------------------------------------
-        public TipsMethodAttribute(string displayText)
+        public TipsMethodAttribute(string displayName)
         {
-            this.displayText = displayText;
+            this.displayName = displayName;
         }
 
 
@@ -137,7 +138,7 @@ namespace Tips_DotNetAndCSharp
         /// </summary>
         /// <returns>文字列形式(Tipメソッドの表示名)</returns>
         //--------------------------------------------------------------------------------
-        public override string ToString() => tipsMethodAttribute.displayText;
+        public override string ToString() => tipsMethodAttribute.displayName;
 
 
         //====================================================================================================
@@ -149,11 +150,11 @@ namespace Tips_DotNetAndCSharp
         /// 【Tipsメソッド表示名】Tipメソッドの表示名を取得します。
         /// </summary>
         /// <remarks>
-        /// 補足<br></br>
-        /// ・tipsMethodAttribute.displayText のショートカットです。<br></br>
+        /// 補足<br/>
+        /// ・tipsMethodAttribute.displayName のショートカットです。<br/>
         /// </remarks>
         //--------------------------------------------------------------------------------
-        public string DisplayText { get => tipsMethodAttribute.displayText; }
+        public string DisplayName { get => tipsMethodAttribute.displayName; }
 
 
         //====================================================================================================
@@ -162,18 +163,18 @@ namespace Tips_DotNetAndCSharp
 
         //--------------------------------------------------------------------------------
         /// <summary>
-        /// 【比較】他のインスタンスと内容を比較します。Tipメソッドの表示名で比較します。
+        /// 【比較】他のインスタンスと内容を比較します。Tipメソッド表示名で比較します。
         /// </summary>
         /// <param name="other">[in ]：比較相手</param>
         /// <returns>
         /// 比較結果値[0より小さい = 比較相手よりも小さい、0 = 比較相手と等しい、0より大きい = 比較相手よりも大きい]
         /// </returns>
         /// <remarks>
-        /// 補足<br></br>
+        /// 補足<br/>
         /// ・<see cref="IComparable{T}.CompareTo(T)"/> の実装です。ソート処理に使用します。
         /// </remarks>
         //--------------------------------------------------------------------------------
-        public int CompareTo(TipsMethodInfo other) => this.DisplayText.CompareTo(other.DisplayText);
+        public int CompareTo(TipsMethodInfo other) => this.DisplayName.CompareTo(other.DisplayName);
 
 
         //====================================================================================================

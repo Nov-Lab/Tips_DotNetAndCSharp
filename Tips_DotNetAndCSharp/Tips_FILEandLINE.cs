@@ -1,5 +1,6 @@
 ﻿// @(h)Tips_FILEandLINE.cs ver 0.00 ( '24.02.04 Nov-Lab ) 作成開始
 // @(h)Tips_FILEandLINE.cs ver 0.51 ( '24.02.04 Nov-Lab ) ベータ版完成
+// @(h)Tips_FILEandLINE.cs ver 0.51a( '24.04.27 Nov-Lab ) その他  ：コメント整理
 
 using System;
 using System.Diagnostics;
@@ -17,25 +18,25 @@ namespace Tips_DotNetAndCSharp
         // ・NovLab.Base クラスライブラリに、FILEandLINE というユーティリティークラスを用意してあります。
         //====================================================================================================
         /// <summary>
-        /// 【.NET Framework の機能：C言語/C++の事前定義済みマクロ __FILE__ や __LINE__ に相当する情報を取得する方法】<br></br>
+        /// 【.NET Framework の機能：C言語/C++の事前定義済みマクロ __FILE__ や __LINE__ に相当する情報を取得する方法】<br/>
         /// .NET Framework 4.5 以降では、<see cref="System.Runtime.CompilerServices"/> 名前空間で定義されている
-        /// 呼び出し元情報の属性を利用することで、各種情報を取得できます。<br></br>
+        /// 呼び出し元情報の属性を利用することで、各種情報を取得できます。<br/>
         /// <code>
         /// ・__FILE__  ：<see cref="CallerFilePathAttribute"/> を利用したメソッドを用意することで取得できます。
         /// ・__LINE__  ：<see cref="CallerLineNumberAttribute"/> を利用したメソッドを用意することで取得できます。
         /// ・メンバー名：<see cref="CallerMemberNameAttribute"/> を利用したメソッドを用意することで取得できます。
         /// </code>
-        /// .NET Framework 4.0以前でも <see cref="StackFrame"/> クラスで取得できますが、*.pdb ファイルがないとソースファイル名と行番号は取得できません。<br></br>
-        /// <br></br>
-        /// また、クラス名とメンバー名だけであれば、より簡単な方法で取得できます。<br></br>
+        /// .NET Framework 4.0以前でも <see cref="StackFrame"/> クラスで取得できますが、*.pdb ファイルがないとソースファイル名と行番号は取得できません。<br/>
+        /// <br/>
+        /// また、クラス名とメンバー名だけであれば、より簡単な方法で取得できます。<br/>
         /// <code>
         /// ・クラス名  ：<see cref="MethodBase.GetCurrentMethod"/>.ReflectedType.Name で取得できます。
         /// ・メンバー名：<see cref="MethodBase.GetCurrentMethod"/>.Name で取得できます。
         /// </code>
         /// </summary>
         /// <remarks>
-        /// 注意事項<br></br>
-        /// ・<see cref="CallerFilePathAttribute"/> を使用すると、バイナリーファイルの中にフルパスソースファイル名が含まれますのでご注意ください。<br></br>
+        /// 注意事項<br/>
+        /// ・<see cref="CallerFilePathAttribute"/> を使用すると、バイナリーファイルの中にフルパスソースファイル名が含まれますのでご注意ください。<br/>
         /// </remarks>
         //====================================================================================================
         [TipsMethod(".NET Framework の機能：C言語/C++の事前定義済みマクロ __FILE__ や __LINE__ に相当する情報を取得する方法")]
@@ -59,15 +60,15 @@ namespace Tips_DotNetAndCSharp
 
 
             // 【実行結果の出力例】
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:47] : 処理開始
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:49] : 電文受信(予約要求)
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:50] : トランザクション開始
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:51] : 予約要求情報読み込み
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:52] : 在庫引き当て
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:53] : 予約台帳更新
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:54] : トランザクションコミット
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:55] : 電文送信(処理結果)
-            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:58] : 処理終了(00:00:00.6390854)
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:48] : 処理開始
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:50] : 電文受信(予約要求)
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:51] : トランザクション開始
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:52] : 予約要求情報読み込み
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:53] : 在庫引き当て
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:54] : 予約台帳更新
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:55] : トランザクションコミット
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:56] : 電文送信(処理結果)
+            // Tips.Tips_FILEandLINE() in Tips_FILEandLINE.cs[line:59] : 処理終了(00:00:00.6390854)
         }
 
 
@@ -80,8 +81,8 @@ namespace Tips_DotNetAndCSharp
         /// <param name="sourceFilePath">  [in ]：省略してください。</param>
         /// <param name="sourceLineNumber">[in ]：省略してください。</param>
         /// <remarks>
-        /// 注意事項<br></br>
-        /// ・このメソッドを使用すると、バイナリーファイルの中にフルパスソースファイル名が含まれますのでご注意ください。<br></br>
+        /// 注意事項<br/>
+        /// ・このメソッドを使用すると、バイナリーファイルの中にフルパスソースファイル名が含まれますのでご注意ください。<br/>
         /// </remarks>
         //--------------------------------------------------------------------------------
         public static void TraceLog(string message,

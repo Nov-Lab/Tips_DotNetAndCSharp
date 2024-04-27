@@ -1,6 +1,6 @@
 ﻿// @(h)Tips_ObjectArrayInForeach.cs ver 0.00 ( '24.02.02 Nov-Lab ) 作成開始
 // @(h)Tips_ObjectArrayInForeach.cs ver 0.51 ( '24.02.02 Nov-Lab ) ベータ版完成
-// @(h)Tips_ObjectArrayInForeach.cs ver 0.51a( '24.02.04 Nov-Lab ) その他  ：コメント整理
+// @(h)Tips_ObjectArrayInForeach.cs ver 0.51b( '24.04.27 Nov-Lab ) その他  ：コメント整理
 
 using System;
 using System.Diagnostics;
@@ -13,17 +13,17 @@ namespace Tips_DotNetAndCSharp
     {
         //--------------------------------------------------------------------------------
         /// <summary>
-        /// 【C#の小技：foreach 構文で、派生型の要素が格納された基本型配列を変換しながら扱う方法】<br></br>
-        /// ・ジェネリックの概念は .NET Framework 2.0 で追加されました。<br></br>
+        /// 【C#の小技：foreach 構文で、派生型の要素が格納された基本型配列を変換しながら扱う方法】<br/>
+        /// ・ジェネリックの概念は .NET Framework 2.0 で追加されました。<br/>
         /// ・そのため、型を指定して配列を取得するメソッドのうち、.NET Framework 1.0 から存在するものなどは、
-        ///   「派生型の配列」ではなく、「派生型の要素が格納された基本型配列」を返します。<br></br>
-        /// ・そのような配列を扱う場合は、配列に格納された個々の要素を派生型に変換してから扱うことになります。<br></br>
+        ///   「派生型の配列」ではなく、「派生型の要素が格納された基本型配列」を返します。<br/>
+        /// ・そのような配列を扱う場合は、配列に格納された個々の要素を派生型に変換してから扱うことになります。<br/>
         /// ・このとき、foreach 構文の中で、foreach (＜派生型の型名＞ ＜変数名＞ in ＜配列＞) のようにすることで、
-        ///   個々の要素を変換しながら繰り返し処理を行うことができます。<br></br>
-        /// <br></br>
-        /// ＜派生型の要素が格納された基本型配列を返すメソッドの一例＞<br></br>
-        /// ・<see cref="Attribute.GetCustomAttributes(System.Reflection.MemberInfo, Type)"/><br></br>
-        /// ・<see cref="Type.FindMembers(System.Reflection.MemberTypes, System.Reflection.BindingFlags, System.Reflection.MemberFilter, object)"/><br></br>
+        ///   個々の要素を変換しながら繰り返し処理を行うことができます。<br/>
+        /// <br/>
+        /// ＜派生型の要素が格納された基本型配列を返すメソッドの一例＞<br/>
+        /// ・<see cref="Attribute.GetCustomAttributes(System.Reflection.MemberInfo, Type)"/><br/>
+        /// ・<see cref="Type.FindMembers(System.Reflection.MemberTypes, System.Reflection.BindingFlags, System.Reflection.MemberFilter, object)"/><br/>
         /// </summary>
         //--------------------------------------------------------------------------------
         [TipsMethod("C#の小技：foreach 構文で、派生型の要素が格納された基本型配列を変換しながら扱う方法")]

@@ -1,6 +1,6 @@
 ﻿// @(h)Tips_StringInterpolation.cs ver 0.00 ( '24.02.02 Nov-Lab ) 作成開始
 // @(h)Tips_StringInterpolation.cs ver 0.51 ( '24.02.02 Nov-Lab ) ベータ版完成
-// @(h)Tips_StringInterpolation.cs ver 0.51a( '24.02.05 Nov-Lab ) その他  ：コメント整理
+// @(h)Tips_StringInterpolation.cs ver 0.51b( '24.04.27 Nov-Lab ) その他  ：コメント整理
 
 using System;
 using System.Diagnostics;
@@ -13,9 +13,9 @@ namespace Tips_DotNetAndCSharp
     {
         //--------------------------------------------------------------------------------
         /// <summary>
-        /// 【C#の機能：$-補完文字列を用いた文字列の書き入れ】<br></br>
+        /// 【C#の機能：$-補完文字列を用いた文字列の書き入れ】<br/>
         /// ・文字列リテラル内で書式設定対象オブジェクトや書式指定文字列を直接指定して、
-        ///   変数などの内容を書き入れることができます。<br></br>
+        ///   変数などの内容を書き入れることができます。<br/>
         /// </summary>
         //--------------------------------------------------------------------------------
         [TipsMethod("C#の機能：$-補完文字列を用いた文字列の書き入れ")]

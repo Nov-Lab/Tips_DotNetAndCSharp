@@ -60,6 +60,7 @@
     <Compile Include="Tips_MethodAutoDetectByAttribute.cs" />
     <Compile Include="Tips_ObjectArrayInForeach.cs" />
     <Compile Include="Tips_StringInterpolation.cs" />
+    <Compile Include="Tips_Using_NonNested.cs" />
     <Compile Include="ZZZDraft_Tips.cs" />
     <EmbeddedResource Include="FrmAppTips.resx">
       <DependentUpon>FrmAppTips.cs</DependentUpon>

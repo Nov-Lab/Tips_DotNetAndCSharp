@@ -1,5 +1,6 @@
 ﻿// @(h)FrmAppTips.cs ver 0.00 ( '24.02.02 Nov-Lab ) 作成開始
 // @(h)FrmAppTips.cs ver 0.51 ( '24.02.02 Nov-Lab ) ベータ版完成
+// @(h)FrmAppTips.cs ver 0.51a( '24.04.27 Nov-Lab ) その他  ：コメント整理
 
 // @(s)
 // 　【Tips集メインフォーム】Tipsメソッドを一覧表示し、実行するための画面です。
@@ -128,8 +129,8 @@ namespace Tips_DotNetAndCSharp
         /// </summary>
         /// <param name="message">[in ]：メッセージ文字列</param>
         /// <remarks>
-        /// 補足<br></br>
-        /// ・<see cref="MyTraceListener"/> から使用します。<br></br>
+        /// 補足<br/>
+        /// ・<see cref="MyTraceListener"/> から使用します。<br/>
         /// </remarks>
         //--------------------------------------------------------------------------------
         public void AddOutput(string message)
@@ -193,7 +194,7 @@ namespace Tips_DotNetAndCSharp
             /// Tips一覧リストボックスで選択されているTipsを実行する
             //------------------------------------------------------------
             var tipsMethodInfo = (TipsMethodInfo)LstTips.SelectedItem;  //// Tips一覧リストボックスで選択されているTipsメソッド情報を取得する
-            AddOutput($"【{tipsMethodInfo.DisplayText}】");             //// 見出し文字列(Tipsメソッドの表示名)を出力する
+            AddOutput($"【{tipsMethodInfo.DisplayName}】");             //// 見出し文字列(Tipsメソッド表示名)を出力する
             tipsMethodInfo.actTipsMethod();                             //// Tipsメソッドを実行する
             AddOutput("");                                              //// 区切り用の空行を出力する
         }
